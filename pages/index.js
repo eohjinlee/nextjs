@@ -1,14 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import { Counter } from "@/components/Counter";
+import React, {useState} from 'react';
+let CounterDummy = ({value, onChangeValue}) => {
 
-//const inter = Inter({ subsets: ['latin'] })
+  return <>
+    <input type="text" value={value}></input>
+    <input type="button" value="+" onClick={() => onChangeValue(value + 1)}></input>
+  </>;
+}
 
 export default function Home() {
+  const [ count, setCount ] = useState(10);
+
   return (
     <>
-      Hello world v2
+    <h1>Counter</h1>
+      <Counter down={true} ></Counter><br/>
+      <CounterDummy value={count} onChangeValue={(oldValue) => setCount(oldValue)}></CounterDummy>
     </>
   )
 }
