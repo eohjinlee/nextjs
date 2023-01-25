@@ -8,7 +8,7 @@ import styles from '@/styles/Home.module.css'
 export default function Home() {
   return (
     <>
-      Hello world
+      Hello world v2
     </>
   )
 }
